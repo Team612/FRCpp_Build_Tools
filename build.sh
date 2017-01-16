@@ -56,9 +56,12 @@ cmake -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=./arm.cmake robot.cmake .. > /d
 
 # run make for the Makefile now
 os=$(uname)
-if [ "$os" -eq "Cygwin" ]; then
+if [ "$os" = "Cygwin" ]; then
     echo "build.sh: Recognized building for Windows..."
-elif [ "$os" -eq "Linux" ]; then
+elif [ "$os" = "Linux" ]; then
+    echo "build.sh: Recognized building for Linux"
+    source make.settings > /dev/null 2>&1
+else
     echo "build.sh: Recognized building for *nix"
     source make.settings > /dev/null 2>&1
 fi

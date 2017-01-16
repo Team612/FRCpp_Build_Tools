@@ -20,9 +20,7 @@ Status: Operational! (Report bugs as Issues)
 
 1. On your local git client, perform `git remote add build https://github.com/Team612/FRCpp_Build_Tools.git`
 
-2. Perform `git pull build master`
-
-3. Merge this repository with your current one.
+2. Perform `git merge build/master`
 
 4. Push the merged changes
 

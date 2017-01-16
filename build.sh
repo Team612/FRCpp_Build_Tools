@@ -62,7 +62,7 @@ elif [ "$os" = "Linux" ]; then
     echo "build.sh: Recognized building for Linux"
     source make.settings > /dev/null 2>&1
 else
-    echo "build.sh: Recognized building for *nix"
+    echo "build.sh: Recognized building for *nix (assumption)"
     source make.settings > /dev/null 2>&1
 fi
 make VERBOSE=1 -j $PARALLELBUILD

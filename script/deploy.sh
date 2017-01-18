@@ -19,6 +19,8 @@ elif [ ${#team} -eq 3 ]; then
     printf "Operating system: $os\n"
 fi
 
+cd ..
+
 if [ ! "$os" = "Cygwin" ]; then
     ping -c 4 "roboRIO-$team-FRC.local" ; mDNS=$?
     if [ $mDNS -ne 0 ]; then

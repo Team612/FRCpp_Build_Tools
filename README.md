@@ -8,21 +8,13 @@ Status: Operational! (Report bugs as Issues)
 
 ## Start Here!
 
-### Instructions for creating a new robotics project
+### Instructions
 
-1. Fork this repository
+1. Download source code.
 
-2. Replace the code in the src folder with your code.
+1. Add Makefile, .build, and script to your repostiroy
 
-3. Push to your own repository.
-
-### Instructions for adding FRC(++) Build Tools to an existing robotics project
-
-1. On your local git client, perform `git remote add build https://github.com/Team612/FRCpp_Build_Tools.git`
-
-2. Perform `git merge build/master`
-
-4. Push the merged changes
+1. Write code in src/
 
 ## Dependencies
 

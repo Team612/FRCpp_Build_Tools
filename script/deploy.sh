@@ -19,7 +19,10 @@ elif [ ${#team} -eq 3 ]; then
     printf "Operating system: $os\n"
 fi
 
-cd ..
+if [ ! -f ".build/FRCUserProgram" ]; then
+    echo "FRCUserProgram not found!"
+    exit 1
+fi
 
 if [ ! "$os" = "Cygwin" ]; then
     ping -c 4 "roboRIO-$team-FRC.local" ; mDNS=$?

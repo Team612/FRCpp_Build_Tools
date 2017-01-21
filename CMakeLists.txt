@@ -1,5 +1,16 @@
+if(WIN32)
+    set(CMAKE_C_COMPILER C:/frc/bin/arm-frc-linux-gnueabi-gcc)
+    set(CMAKE_CXX_COMPILER C:/frc/bin/arm-frc-linux-gnueabi-g++)
+endif(WIN32)
+
+if(UNIX)
+    set(CMAKE_C_COMPILER arm-frc-linux-gnueabi-gcc)
+    set(CMAKE_CXX_COMPILER arm-frc-linux-gnueabi-g++)
+endif(UNIX)
+
 cmake_minimum_required(VERSION 2.8)
 project(Robot)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-unused-parameter -pedantic -fPIC")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++1y -I${CMAKE_CURRENT_LIST_DIR}/wpilib/include/ -I${CMAKE_CURRENT_LIST_DIR}/src -I${CMAKE_CURRENT_LIST_DIR}/CTRE/include -I${CMAKE_CURRENT_LIST_DIR}/wpilib/lib -O0 -g3 -fmessage-length=0")

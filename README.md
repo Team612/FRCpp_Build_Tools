@@ -10,9 +10,7 @@ Status: Operational! (Report bugs as Issues)
 
 ### Instructions
 
-1. Download source code.
-
-1. Add Makefile, .build, and script to your repostiroy
+1. Download source code and add files to your repository
 
 1. Write code in src/
 

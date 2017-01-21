@@ -1,13 +1,3 @@
-if(WIN32)
-    set(CMAKE_C_COMPILER C:/frc/bin/arm-frc-linux-gnueabi-gcc)
-    set(CMAKE_CXX_COMPILER C:/frc/bin/arm-frc-linux-gnueabi-g++)
-endif(WIN32)
-
-if(UNIX)
-    set(CMAKE_C_COMPILER arm-frc-linux-gnueabi-gcc)
-    set(CMAKE_CXX_COMPILER arm-frc-linux-gnueabi-g++)
-endif(UNIX)
-
 cmake_minimum_required(VERSION 2.8)
 project(Robot)
 set(CMAKE_CXX_STANDARD 11)

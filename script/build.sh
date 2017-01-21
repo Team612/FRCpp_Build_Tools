@@ -44,7 +44,7 @@ if check_internetone || check_internettwo; then
     fi
 
     echo "build.sh: Downloading Compiler..."
-    sh script/.compiler-download.sh
+    bash script/.compiler-download.sh
 fi
 
 # run cmake to generate Makefile contents
@@ -65,7 +65,12 @@ else
     echo "build.sh: Recognized building for *nix (assumption)"
     source make.settings > /dev/null 2>&1
 fi
-make VERBOSE=1 -j $PARALLELBUILD
+
+if [ "$1" = "-v" ]; then
+    make VERBOSE=1 -j $PARALLELBUILD
+else
+    make -j $PARALLELBUILD
+fi
 
 # Delete cmake files to keep Eclipse working
 echo "build.sh: Deleting CMakeFiles..."

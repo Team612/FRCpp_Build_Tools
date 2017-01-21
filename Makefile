@@ -1,5 +1,8 @@
 all:
-	sh script/build.sh
+	bash script/build.sh
+
+verbose:
+	bash script/build.sh -v
 
 deploy:
 	bash script/deploy.sh

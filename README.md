@@ -22,21 +22,37 @@ General:
 
   * FRC Toolchain
 
+Cygwin:
+
+  * cmake
+
+  * make
+
+  * unzip
+
+  * wget
+
+  * openssh
+
 Windows:
 
-  * Cygwin - cmake, make, unzip, wget, openssh
+  * NMake (Visual Studio)
+
+  * unzip.exe [link](http://stahlworks.com/dev/unzip.exe) in PATH
+
+  * wget.exe or wget64.exe (depending on your system)  [link](https://eternallybored.org/misc/wget/) in PATH
+
+  * WinSCP [link](https://winscp.net/eng/download.php)
 
 ## User guide
 
-### Linux
+### Linux/Cygwin
 
 How to build code:
 
-1. Open a terminal and `cd` into your code base
+1. Make sure the code you want to compile is in src/ and the `Makefile` are in the directory above src/
 
-1. Make sure the code you want to compile is in src/ and `.build.sh` and `Makefile` are in the directory above src/
-
-1. Type `make`into the terminal
+1. Type `make` into the terminal
 
 How to deploy code:
 
@@ -58,33 +74,27 @@ After this is done, simply type `make deploy`to deploy
 
 How to build code:
 
-1. Open Cygwin and type `cd c:/`
+1. Make sure the code you want to compile is in src/ and the `Makefile` are in the directory above src/
 
-1. Use `ls` to list your directory and `cd` to find the directory your code base is in
-
-1. Make sure the code you want to compile is in src/ and `.build.sh` and `Makefile` are in the directory above src/
-
-1. Type `make`into Cygwin
+1. Type `nmake /F Makefile.win` into cmd
 
 How to deploy code:
 
-**FIRST TIME ONLY**
+1. Login to your roborio with WinSCP and copy .build\FRCUserProgram into the home directory
 
-1. Type `ssh-keygen -t rsa` into the terminal
-
-1. Enter file in which to save the key (/home/demo/.ssh/id_rsa): `roborio`
-
-1. Enter passphrase (empty for no passphrase): [leave blank]
-
-1. After the output, connect to the robot and type `ssh-copy-id -i roborio lvuser@roborio-[TEAM]-frc.local`. Be sure to replace [TEAM] with your number
-
-1. Write your team number in the TEAM_NAME file. Make sure it is only one line and contains no extra spaces.
-
-After this is done, simply type `make deploy`to deploy
+1. You may need to restart the robot code from the driver station
 
 ### Commands
+
+**Linux/Cygwin**
 
     make - build code
     make update - manually update WPILib
     make clean - clean output files
     make deploy - deploy to robot
+
+**Windows**
+
+    nmake /F Makefile.win - build code
+    nmake /F Makefile.win update - manually update WPILib
+    nmake /F Makefile.win clean - manually update WPILib

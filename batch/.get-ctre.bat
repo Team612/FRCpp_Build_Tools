@@ -28,9 +28,9 @@ if not exist CTRE.txt (
     mkdir ctre_full
     CD ctre_full
     unzip ..\CTRE_FRCLibs_NON-WINDOWS.zip
-    ECHO ".get_ctre.bat: Cleaning up..."
+    ECHO ".get-ctre.bat: Cleaning up..."
     CD ..
-    cp -r ctre_full\cpp CTRE
-    rm -rf ctre_full\
-    rm CTRE_FRCLibs_NON-WINDOWS.zip
+    ECHO D | xcopy ctre_full\cpp CTRE /s/e
+    rmdir ctre_full\ /S /Q
+    del CTRE_FRCLibs_NON-WINDOWS.zip /Q
 )

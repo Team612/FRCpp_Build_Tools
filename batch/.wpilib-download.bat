@@ -29,12 +29,12 @@ if not exist wpilib.txt (
     mkdir wpilib
     CD wpilib
     unzip ..\edu.wpi.first.wpilib.plugins.cpp_2017.1.1.jar
-    rm -rf edu
-	rm -rf META-INF
-	rm -rf plugin.xml
+    rmdir edu /S /Q
+	rmdir META-INF /S /Q
+	rmdir plugin.xml /S /Q
     unzip resources\cpp.zip
     ECHO ".wpilib-download.bat: Cleaning up..."
-    rm -rf resources\
+    rmdir resources\ /S /Q
     CD ..
-    rm edu.wpi.first.wpilib.plugins.cpp_2017.1.1.jar
+    del edu.wpi.first.wpilib.plugins.cpp_2017.1.1.jar /Q
 )

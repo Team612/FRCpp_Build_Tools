@@ -74,7 +74,7 @@ fi
 
 # Delete cmake files to keep Eclipse working
 echo "build.sh: Deleting CMakeFiles..."
-#rm -rf CMakeFiles/
+rm -rf CMakeFiles/
 
 echo "build.sh: Re-naming outfile..."
 rm FRCUserProgram

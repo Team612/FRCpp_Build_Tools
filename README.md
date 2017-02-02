@@ -10,9 +10,13 @@ Status: Operational! (Report bugs as Issues)
 
 ### Instructions
 
-1. Download source code and add files to your repository
+1. Install system dependencies
 
-1. Write code in src/
+1. Download the zip package (located in releases)
+
+1. Add code to a new folder called src
+
+1. (Windows only) Add the binaries folder to your System PATH
 
 ## Dependencies
 
@@ -20,7 +24,7 @@ General:
 
   * CMake
 
-  * FRC Toolchain
+  * FRC C++ Toolchain
 
 Cygwin:
 
@@ -38,19 +42,13 @@ Windows:
 
   * NMake (Visual Studio)
 
-  * unzip.exe [link](http://stahlworks.com/dev/unzip.exe) in PATH
-
-  * wget.exe or wget64.exe (depending on your system)  [link](https://eternallybored.org/misc/wget/) in PATH
-
-  * WinSCP [link](https://winscp.net/eng/download.php)
-
 ## User guide
 
 ### Linux/Cygwin
 
 How to build code:
 
-1. Make sure the code you want to compile is in src/ and the `Makefile` are in the directory above src/
+1. Make sure the code you want to compile is in src/ and the `Makefile` is in the directory above src/
 
 1. Type `make` into the terminal
 
@@ -68,7 +66,7 @@ How to deploy code:
 
 1. Write your team number in the TEAM_NAME file. Make sure it is only one line and contains no extra spaces.
 
-After this is done, simply type `make deploy`to deploy
+After this is done, simply type `make deploy` to deploy
 
 ### Windows
 
@@ -80,9 +78,7 @@ How to build code:
 
 How to deploy code:
 
-1. Login to your roborio with WinSCP and copy .build\FRCUserProgram into the home directory
-
-1. You may need to restart the robot code from the driver station
+1. type `nmake /F Makefile.win deploy`
 
 ### Commands
 
@@ -98,3 +94,4 @@ How to deploy code:
     nmake /F Makefile.win - build code
     nmake /F Makefile.win update - manually update WPILib
     nmake /F Makefile.win clean - manually update WPILib
+    nmake /F Makefile.win deploy - deploy to robot
